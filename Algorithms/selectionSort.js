@@ -1,18 +1,16 @@
-function selectionSort(arr) {
-  for (let i = 0; i < arr.length - 1; i++) {
-    let minIndex = i;
+function selectSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[minIndex]) {
-        minIndex = j;
+      if (arr[i] > arr[j]) {
+        let sp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = sp;
       }
     }
-    let temp = arr[i];
-    arr[i] = arr[minIndex];
-    arr[minIndex] = temp;
   }
   console.log(arr);
 }
 
-let arr = [8, 5, 3, 1, 7, 2, 4, 6];
+let arr = [2, 1, 3, 7, 5, 4, 6, 8];
 
-selectionSort(arr);
+selectSort(arr);
